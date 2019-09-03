@@ -1,6 +1,6 @@
 
 import random
-# TEST
+
 def load_word():
     '''
     A function that reads a text file of words and randomly selects one to use as the secret word
@@ -26,7 +26,7 @@ def is_word_guessed(secret_word, letters_guessed):
         bool: True only if all the letters of secret_word are in letters_guessed, False otherwise
     '''
     # TODO: Loop through the letters in the secret_word and check if a letter is not in lettersGuessed
-    if letter == letter_guessed:
+    if letters == letter_guessed:
         secret_word = True
 
     else:
@@ -44,7 +44,11 @@ def get_guessed_word(secret_word, letters_guessed):
     '''
 
     #TODO: Loop through the letters in secret word and build a string that shows the letters that have been guessed correctly so far that are saved in letters_guessed and underscores for the letters that have not been guessed yet
-
+    for letters in secret_word:
+        if letters == letters_guessed:
+            print(letters)
+        else:
+            print("-")
     pass
 
 
@@ -58,7 +62,10 @@ def is_guess_in_word(guess, secret_word):
         bool: True if the guess is in the secret_word, False otherwise
     '''
     #TODO: check if the letter guess is in the secret word
-
+    if guess == secret_word:
+        guess = True
+    else:
+        guess = False
     pass
 
 
@@ -91,6 +98,7 @@ def spaceman(secret_word):
 def tst():
     secret_word = load_word()
     print(secret_word)
+    get_guessed_word(secret_word, "r")
 
 tst()
 
