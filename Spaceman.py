@@ -62,7 +62,7 @@ def is_guess_in_word(guess, secret_word):
         bool: True if the guess is in the secret_word, False otherwise
     '''
     #TODO: check if the letter guess is in the secret word
-    if guess == secret_word:
+    if guess in secret_word:
         guess = True
     else:
         guess = False
@@ -85,7 +85,10 @@ def spaceman(secret_word):
     #TODO: Ask the player to guess one letter per round and check that it is only one letter
 
     #TODO: Check if the guessed letter is in the secret or not and give the player feedback
-
+    if guess in secret_word:
+        print("Letter guessed is in word")
+    else:
+        print("Letter not in word")
     #TODO: show the guessed word so far
 
     #TODO: check if the game has been won or lost
