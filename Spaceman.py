@@ -115,10 +115,10 @@ def spaceman(secret_word):
         #TODO: check if the game has been won or lost
         for letter in letters_guessed:
             print(letter, sep=' ', end=' ')
-        if is_word_guessed(secret_word, letters_guessed):
-            print("WINNER WINNER CHICKEN DINNER")
-        elif Wrong_guesses > 6:
-            print("LOSER")
+            if is_word_guessed(secret_word, letters_guessed):
+                print("WINNER WINNER CHICKEN DINNER")
+            elif Wrong_guesses > 6:
+                print("LOSER")
 
 
 
@@ -137,4 +137,9 @@ def tst():
 
 
 secret_word = load_word()
+print(" ")
+print("Users win if they can guess the mystery word before the spaceman is drawn.")
+print("The spaceman is made up of seven parts, and each part is drawn for each incorrect guess.")
+print("If all seven parts get drawn before the user guesses the word, then they lose")
+print(" ")
 spaceman(load_word())
