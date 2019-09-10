@@ -138,8 +138,12 @@ def tst():
 
 secret_word = load_word()
 print(" ")
+print("-------------------------------------------------------------------------")
+print("RULES!")
+print("-------------------------------------------------------------------------")
 print("Users win if they can guess the mystery word before the spaceman is drawn.")
 print("The spaceman is made up of seven parts, and each part is drawn for each incorrect guess.")
 print("If all seven parts get drawn before the user guesses the word, then they lose")
+print("-------------------------------------------------------------------------")
 print(" ")
 spaceman(load_word())
