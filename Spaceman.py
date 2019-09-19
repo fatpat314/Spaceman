@@ -1,5 +1,6 @@
 
 import random
+import unittest
 
 def load_word():
     '''
@@ -121,11 +122,6 @@ def spaceman(secret_word):
                 print("LOSER")
 
 
-
-
-
-
-
 #These function calls that will start the game
 def tst():
     #secret_word = load_word()
@@ -144,8 +140,19 @@ print("-------------------------------------------------------------------------
 print("THE RULES!")
 print(" ")
 print("Users win if they can guess the mystery word before the spaceman is drawn.")
-print("The spaceman is made up of seven parts, and each part is drawn for each incorrect guess.")
+print("The spaceman is made up of seven parts, and a new part is added for each incorrect guess.")
 print("If all seven parts get drawn before the user guesses the word, then they lose")
 print("-------------------------------------------------------------------------")
 print(" ")
-spaceman(load_word())
+#spaceman(load_word())
+
+class Spaceman_tests(unittest.TestCase):
+    def test_is_word_guessed(self):
+        self.assertEqual(is_word_guessed("secret","secret"), True)
+
+    def test_is_guess_in_word(self):
+        self.assertEqual(is_guess_in_word("s","secret"), True)
+
+
+if __name__ == '__main__':
+    unittest.main()
