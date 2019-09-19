@@ -144,7 +144,8 @@ print("The spaceman is made up of seven parts, and a new part is added for each 
 print("If all seven parts get drawn before the user guesses the word, then they lose")
 print("-------------------------------------------------------------------------")
 print(" ")
-#spaceman(load_word())
+
+spaceman(load_word())
 
 class Spaceman_tests(unittest.TestCase):
     def test_is_word_guessed(self):
@@ -153,6 +154,8 @@ class Spaceman_tests(unittest.TestCase):
     def test_is_guess_in_word(self):
         self.assertEqual(is_guess_in_word("s","secret"), True)
 
+    def test_spaceman(self):
+        self.assertEqual(spaceman("secret"),None)
 
 if __name__ == '__main__':
     unittest.main()
